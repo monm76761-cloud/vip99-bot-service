@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vip99-bot-control
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: REPO_OWNER
+        sync: false
+      - key: REPO_NAME
+        sync: false
+      - key: CONTROL_API_TOKEN
+        sync: false
